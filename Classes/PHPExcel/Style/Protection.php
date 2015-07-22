@@ -46,6 +46,14 @@ class PHPExcel_Style_Protection extends PHPExcel_Style_Supervisor implements PHP
      */
     protected $hidden;
 
+    public function serializeStyles()
+    {
+        return [
+            'locked'=>$this->getLocked(),
+            'hidden'=>$this->getHidden()
+        ];
+    }
+
     /**
      * Create a new PHPExcel_Style_Protection
      *

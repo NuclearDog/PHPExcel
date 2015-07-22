@@ -78,6 +78,16 @@ class PHPExcel_Style_Fill extends PHPExcel_Style_Supervisor implements PHPExcel_
      */
     protected $endColor;
 
+    public function serializeStyles()
+    {
+        return [
+            'type'=>$this->getFillType(),
+            'rotation'=>$this->getRotation(),
+            'startcolor'=>['argb'=>$this->getStartColor()->getARGB()],
+            'endcolor'=>['argb'=>$this->getEndColor()->getARGB()]
+        ];
+    }
+
     /**
      * Create a new PHPExcel_Style_Fill
      *

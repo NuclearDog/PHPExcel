@@ -110,6 +110,18 @@ class PHPExcel_Style_Borders extends PHPExcel_Style_Supervisor implements PHPExc
      */
     protected $horizontal;
 
+    public function serializeStyles()
+    {
+        return [
+            'top'=>$this->getTop()->serializeStyles(),
+            'right'=>$this->getRight()->serializeStyles(),
+            'bottom'=>$this->getBottom()->serializeStyles(),
+            'left'=>$this->getLeft()->serializeStyles(),
+            'diagonal'=>$this->getDiagonal()->serializeStyles(),
+            'diagonaldirection'=>$this->getDiagonalDirection()
+        ];
+    }
+
     /**
      * Create a new PHPExcel_Style_Borders
      *

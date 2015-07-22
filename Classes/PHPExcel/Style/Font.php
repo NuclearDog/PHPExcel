@@ -97,6 +97,21 @@ class PHPExcel_Style_Font extends PHPExcel_Style_Supervisor implements PHPExcel_
      */
     protected $color;
 
+    public function serializeStyles()
+    {
+        return [
+            'name'=>$this->getName(),
+            'size'=>$this->getSize(),
+            'bold'=>$this->getBold(),
+            'italic'=>$this->getItalic(),
+            'superScript'=>$this->getSuperScript(),
+            'subScript'=>$this->getSubScript(),
+            'underline'=>$this->getUnderline(),
+            'strike'=>$this->getStrikeThrough(),
+            'color'=>['argb'=>$this->getColor()->getARGB()]
+        ];
+    }
+
     /**
      * Create a new PHPExcel_Style_Font
      *

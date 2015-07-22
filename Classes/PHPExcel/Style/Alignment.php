@@ -97,6 +97,19 @@ class PHPExcel_Style_Alignment extends PHPExcel_Style_Supervisor implements PHPE
      */
     protected $readorder = 0;
 
+    public function serializeStyles()
+    {
+        return [
+            'horizontal'=>$this->getHorizontal(),
+            'vertical'=>$this->getVertical(),
+            'rotation'=>$this->getTextRotation(),
+            'wrap'=>$this->getWrapText(),
+            'shrinkToFit'=>$this->getShrinkToFit(),
+            'indent'=>$this->getIndent(),
+            'readorder'=>$this->getReadOrder()
+        ];
+    }
+
     /**
      * Create a new PHPExcel_Style_Alignment
      *

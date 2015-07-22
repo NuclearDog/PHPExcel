@@ -95,6 +95,13 @@ class PHPExcel_Style_NumberFormat extends PHPExcel_Style_Supervisor implements P
      */
     protected $builtInFormatCode    = 0;
 
+    public function serializeStyles()
+    {
+        return [
+            'code'=>$this->getFormatCode()
+        ];
+    }
+
     /**
      * Create a new PHPExcel_Style_NumberFormat
      *

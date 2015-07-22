@@ -64,6 +64,14 @@ class PHPExcel_Style_Border extends PHPExcel_Style_Supervisor implements PHPExce
      */
     protected $parentPropertyName;
 
+    public function serializeStyles()
+    {
+        return [
+            'style'=>$this->getBorderStyle(),
+            'color'=>['argb'=>$this->getColor()->getARGB()]
+        ];
+    }
+
     /**
      * Create a new PHPExcel_Style_Border
      *
