@@ -469,6 +469,19 @@ class PHPExcel_Style extends PHPExcel_Style_Supervisor implements PHPExcel_IComp
         return $this;
     }
 
+    public function serializeStyles()
+    {
+        $return = [];
+        $return['fill'] = $this->getFill()->serializeStyles();
+        $return['font'] = $this->getFont()->serializeStyles();
+        $return['borders'] = $this->getBorders()->serializeStyles();
+        $return['alignment'] = $this->getAlignment()->serializeStyles();
+        $return['numberformat'] = $this->getNumberFormat()->serializeStyles();
+        $return['protection'] = $this->getProtection()->serializeStyles();
+        $return['quotePrefix'] = $this->quotePrefix;
+        return $return;
+    }
+
     /**
      * Get Fill
      *
