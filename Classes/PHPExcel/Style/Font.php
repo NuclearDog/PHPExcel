@@ -392,7 +392,7 @@ class PHPExcel_Style_Font extends PHPExcel_Style_Supervisor implements PHPExcel_
             $this->getActiveSheet()->getStyle($this->getSelectedCells())->applyFromArray($styleArray);
         } else {
             $this->superScript = $pValue;
-            $this->subScript = !$pValue;
+            $this->subScript = false;
         }
         return $this;
     }
@@ -426,7 +426,7 @@ class PHPExcel_Style_Font extends PHPExcel_Style_Supervisor implements PHPExcel_
             $this->getActiveSheet()->getStyle($this->getSelectedCells())->applyFromArray($styleArray);
         } else {
             $this->subScript = $pValue;
-            $this->superScript = !$pValue;
+            $this->superScript = false;
         }
         return $this;
     }
